@@ -1,0 +1,367 @@
+@import "../../../node_modules/compass-mixins/lib/compass/_css3.scss";
+@import "../../../node_modules/compass-mixins/lib/compass/_reset.scss";
+
+$footerheight: 75px
+$iconwidth: 40px
+$iconheight: 40px
+$asidewid: 90px
+$coverwidth: 150px
+$coverheight: 150px
+
+@font-face
+  font-family: 'icomoon'
+  src:  url('fonts/icomoon.eot?ycgbei')
+  src:  url('fonts/icomoon.eot?ycgbei#iefix') format('embedded-opentype'),url('fonts/icomoon.ttf?ycgbei') format('truetype'),url('fonts/icomoon.woff?ycgbei') format('woff'),url('fonts/icomoon.svg?ycgbei#icomoon') format('svg')
+  font-weight: normal
+  font-style: normal
+
+[class^="icon-"], [class*=" icon-"], article
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important
+  speak: none
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+
+.icon-music:before 
+  content: "\e911"
+
+.icon-profile:before 
+  content: "\e923"
+
+.icon-address-book:before 
+  content: "\e944"
+
+.icon-envelop:before 
+  content: "\e945"
+
+.icon-location2:before 
+  content: "\e948"
+
+.icon-mobile:before 
+  content: "\e958"
+
+.icon-bubble2:before 
+  content: "\e96e"
+
+.icon-quotes-left:before 
+  content: "\e977"
+
+.icon-search:before 
+  content: "\e986"
+
+.icon-clipboard:before 
+  content: "\e9b8"
+
+.icon-menu:before 
+  content: "\e9bd"
+
+.icon-earth:before 
+  content: "\e9ca"
+
+.icon-link:before 
+  content: "\e9cb"
+
+.icon-heart:before 
+  content: "\e9da"
+
+.icon-checkmark:before 
+  content: "\ea10"
+
+.icon-enter:before 
+  content: "\ea13"
+
+.icon-exit:before 
+  content: "\ea14"
+
+.icon-play3:before 
+  content: "\ea1c"
+
+.icon-pause2:before 
+  content: "\ea1d"
+
+.icon-backward2:before 
+  content: "\ea1f"
+
+.icon-forward3:before 
+  content: "\ea20"
+
+.icon-volume-high:before 
+  content: "\ea26"
+
+.icon-volume-medium:before 
+  content: "\ea27"
+
+.icon-volume-low:before 
+  content: "\ea28"
+
+.icon-loop2:before 
+  content: "\ea2e"
+
+.icon-shuffle:before 
+  content: "\ea30"
+
+
+
+
+
+body
+  font-size: 24px
+  color: #fff
+
+.hello
+  display: flex
+  text-align: center
+  .top
+    width: 100%
+    height: 100%
+    min-height: 100vh
+    .showarea
+      margin-bottom: $footerheight + 5px
+    .aside-box
+      background-color: rgba(0, 0, 0, .5)
+      position: fixed
+      display: flex
+      flex-flow: column wrap
+      justify-content: space-around
+      height: calc(100vh - 75px)
+      width: $asidewid
+      min-width: $asidewid
+      a
+        img
+          position: relative
+          width: $iconwidth
+          height: $iconheight
+          padding: 0 25px
+        &:hover
+          color: white
+          transition: color .3s
+        &:last-child
+          &:hover
+            width: 42px
+            height: 42px
+            transition: all .3s
+
+  .footer
+    position: fixed
+    display: flex
+    justify-content: center
+    text-align: center
+    width: 100%
+    height: $footerheight
+    background-color: #181818
+    bottom: 0
+
+.display_list
+  margin: 0 auto
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  padding-left: $asidewid
+  div
+    // max-width: 450px
+    display: flex
+    flex-flow: column wrap
+    justify-content: center
+    align-items: center
+    margin: 0 10px
+    article
+      display: block
+      padding: 15px
+      width: $coverwidth - 30px
+      height: $coverheight - 30px
+      background-size: cover !important
+      background-position: center center !important
+      background-repeat: no-repeat !important
+
+    .li_info
+      display: block
+      padding: 20px 5px
+      font-size: 0.6em
+#searching
+  padding: 20px 0
+.greet
+  padding-left: $asidewid
+  margin: 20px 0 40px 0
+  display: inline-flex
+  flex-flow: row nowrap
+  justify-content: center
+  width: calc(100% - 90px)
+
+
+section + p
+  padding-left: $asidewid
+  margin: 70px 0 25px 0px
+
+.savour
+  margin: 0 auto
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+  padding-left: $asidewid
+  div
+    // max-width: 450px
+    display: flex
+    flex-flow: column wrap
+    justify-content: center
+    align-items: center
+    margin: 0 20px
+    article
+      display: block
+      padding: 15px
+      width: $coverwidth - 30px
+      height: $coverheight - 30px
+      background-size: cover !important
+      background-position: center center !important
+      background-repeat: no-repeat !important
+    .li_info
+      display: block
+      padding: 20px 5px
+      font-size: 0.6em
+.maybe_prefer
+  margin: 0 auto
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+  padding-left: $asidewid
+  margin: 0 20px
+  div
+    // max-width: 450px
+    display: inline-flex
+    flex-flow: column wrap
+    justify-content: center
+    align-items: center
+    article
+      display: block
+      padding: 15px
+      width: $coverwidth - 30px
+      height: $coverheight - 30px
+      background-size: cover !important
+      background-position: center center !important
+      background-repeat: no-repeat !important
+      cursor: pointer
+    .li_info
+      display: block
+      padding: 20px 5px
+      font-size: 0.6em
+p
+  .icon-play
+    display: inline-block
+    cursor: pointer
+    color: #0099cc
+    &:before
+      content: "\ea1c"
+      font-size: 1.5em
+      transition: all .3s cubic-bezier(0,0,0,2.0)
+    &:hover
+      font-size: 3em
+      color: blue
+
+.billboard
+  margin: 0 auto
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+  padding-left: $asidewid
+  div
+    // max-width: 450px
+    display: inline-flex
+    flex-flow: column wrap
+    justify-content: center
+    align-items: center
+    margin: 0 20px
+    article
+      display: block
+      padding: 15px
+      width: $coverwidth - 30px
+      height: $coverheight - 30px
+      background-size: cover !important
+      background-position: center center !important
+      background-repeat: no-repeat !important
+    .li_info
+      display: block
+      padding: 20px 5px
+      font-size: 0.6em
+
+
+article
+  cursor: pointer
+  transition: all .3s
+  position: relative
+  &:hover
+    font-size: 140px
+    &:before
+      content: "\ea1c"
+      position: absolute
+      color: #0099cc
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      background-color: rgba(0,0,0,.5)
+      background-size: 100% 100%
+      background-position: center center
+
+.info-cover
+  width: 40px
+  height: 40px
+  border-radius: 5em
+  margin: 0 auto
+  background-size: contain
+  background-position: center center
+
+.search-bar
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  justify-content: center
+  margin-top: 20px
+  padding-left: $asidewid
+  span
+    cursor: pointer
+    animation: duaimove .45s
+    font-size: 45px
+    color: #0099cc
+    &:hover
+      color: white
+      transition: color .3s
+  input
+    font-family: "Microsoft JhengHei"
+    letter-spacing: 3px
+    text-align: center
+    width: 250px
+    height: 45px
+    border: none
+    opacity: .7
+    background-color: rgba(225, 225, 225, .45)
+    border-radius: 5px
+    color: white
+    padding-left: 10px
+    font-size: 20px
+    animation: reverX .6s
+
+@keyframes reverX
+  0%
+    transform: rotateX(0deg)
+  25%
+    transform: rotateX(90deg)
+  75%
+    transform: rotateX(90deg)
+  100%
+    transform: rotateX(0deg)
+@keyframes duaimove
+  0%
+    transform: scale(0.1,0.1)
+  25%
+    transform: scaleX(1.5) scaleY(0.75)
+  75%
+    transform: scaleX(0.75) scaleY(1.3)
+  100%
+    transform: scaleX(1.25) scaleY(0.85)
+  100%
+    transform: scale(1)
