@@ -75,11 +75,13 @@ export default{
       transition: all 33ms
       top: 9.5px
       outline: none
-      &:hover
+      &:hover,:focus
         color: darken(#0099CC, 5%)
-        transition: color .5s
+        transform: scale(1.2)
+      &:active
+        transform: scale(0.8)
       &:nth-child(3)
-        font-size: 32px
+        font-size: 28px
 
   .playback-bar
     width: 100%

@@ -114,40 +114,39 @@ $coverheight: 150px
 body
   font-size: 24px
   color: #fff
-
-.hello
-  display: flex
-  text-align: center
-  .top
-    width: 100%
-    height: 100%
-    min-height: 100vh
-    .showarea
-      margin-bottom: $footerheight + 5px
-    .aside-box
-      background-color: rgba(0, 0, 0, .5)
-      position: fixed
-      display: flex
-      flex-flow: column wrap
-      justify-content: space-around
-      height: calc(100vh - 75px)
-      width: $asidewid
-      min-width: $asidewid
-      a
-        img
-          position: relative
-          width: $iconwidth
-          height: $iconheight
-          padding: 0 25px
-        &:hover
-          color: white
-          transition: color .3s
-        &:last-child
+#app
+  .hello
+    display: flex
+    text-align: center
+    .top
+      width: 100%
+      height: 100%
+      min-height: 100vh
+      .showarea
+        margin-bottom: $footerheight + 5px
+      .aside-box
+        background-color: rgba(0, 0, 0, .5)
+        position: fixed
+        display: flex
+        flex-flow: column wrap
+        justify-content: space-around
+        height: calc(100vh - 75px)
+        width: $asidewid
+        min-width: $asidewid
+        a
+          img
+            position: relative
+            width: $iconwidth
+            height: $iconheight
+            padding: 0 25px
           &:hover
-            width: 42px
-            height: 42px
-            transition: all .3s
-
+            color: white
+            transition: color .3s
+          &:last-child
+            &:hover
+              width: 42px
+              height: 42px
+              transition: all .3s
   .footer
     position: fixed
     display: flex
@@ -294,8 +293,9 @@ article
   cursor: pointer
   transition: all .3s
   position: relative
-  &:hover
+  &:hover,:focus
     font-size: 140px
+    transform: scale(1.1)
     &:before
       content: "\ea1c"
       position: absolute
@@ -303,9 +303,11 @@ article
       top: 50%
       left: 50%
       transform: translate(-50%,-50%)
-      background-color: rgba(0,0,0,.5)
+      background-color: rgba(0,0,20,.5)
       background-size: 100% 100%
       background-position: center center
+    &:active
+      transform: scale(0.9)
 
 .info-cover
   width: 40px

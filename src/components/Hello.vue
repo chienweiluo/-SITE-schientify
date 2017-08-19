@@ -4,7 +4,6 @@
       <app-aside></app-aside>
       <app-main></app-main>
     </div>
-    <app-footer></app-footer>
   </div>
 </template>
 <script>

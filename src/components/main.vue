@@ -71,7 +71,7 @@ export default {
       ftrcover.src = album.cover
       ftrcover.style.width = "60px"
       ftrcover.style.height = "60px"    //playing album 調換
-      
+
       let playing= document.getElementById("playicon") //play icon調換
       playing.classList.remove('icon-play3')
       playing.classList.add('icon-pause2')

@@ -3,11 +3,16 @@
     <transition name="slide" mode="out-in">
       <router-view></router-view>
     </transition>
+    <app-footer></app-footer>
   </div>
 </template>
 <script>
+import AppFooter from './components/footer.vue'
 export default {
   name: 'app',
+  components:{
+    AppFooter: AppFooter
+  }
 }
 
 </script>
