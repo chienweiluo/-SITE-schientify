@@ -55,7 +55,10 @@
   
   -> 後來改用Array保存, 只要長度大於2, 就shift掉最前面的元素
 
+  8. `The play() request was interrupted by a call to pause()`
+  
 
+  -> 因為play()是異步請求, https://developers.google.com/web/updates/2017/06/play-request-was-interrupted 
 ---
 
 DEMO: [schientify](http://chienweiluo.online/schientify/#/)
