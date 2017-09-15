@@ -11,7 +11,7 @@
            <li><span class="icon-link"></span><a :href="user.site">{{ user.site}}</a></li>
            <li><span class="icon-location2"></span>{{ user.locate}}</li>
            <li><span class="icon-quotes-left"></span>Be Water</li>
-           <li><router-link to="/"><span class="icon-checkmark"></span>OK, GO BACK</router-link></li>
+           <li><router-link tag="a" to="/"><span class="icon-checkmark"></span>OK, GO BACK</router-link></li>
         </ul>
         </table>
     </p>
@@ -51,6 +51,7 @@ a
   color: #0099cc
 
 .hello
+  position: relative
   display: flex
   justify-content: center
   align-items: center
@@ -73,15 +74,12 @@ a
   .file_info
     flex: 4.5 1 0
     table
-      ul
-        li
-          text-align: left
-          padding: 20px
-          &:last-child
-            &:hover
-              color: lighten(#0099cc, 50%)
-              transition: all .5s
-          span
-            padding: 0 15px
+      li
+        text-align: left
+        padding: 20px
+        transition: all .5s
+
+        span
+          padding: 0 15px
 
 </style>

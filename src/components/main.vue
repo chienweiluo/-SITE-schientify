@@ -7,44 +7,53 @@
 
     <transition name="fade">
       <div v-if="this.searching==false">
-        <p class="greet"><span>晴天雨天颱風天，都是需要音樂的！</span></p>
+        <p class="greet"><span>Man, grab one!</span></p>
         <section class="display_list">
-          <div v-for="album in loadalbums" @click="toplay(album)">
+          <div v-for="album in loadalbums" @click="toplay(album,$event)">
             <article :style="{background:'url('+album.cover+')'}" class="cover"></article>
             <p class="li_info">{{ album.title }}</p>
+            <p>{{album.author}}</p>
+            <audio :data-key="album.audio" :src="album.audio"></audio>
           </div>
         </section>
-        <p>你會喜歡的</p>
+        <p>How is it?</p>
         <section class="savour">
           <div v-for="savour in loadsavours" @click="toplay(savour)">
             <article :style="{background:'url('+savour.cover+')'}"></article>
             <p class="li_info">{{ savour.title }}</p>
+            <p>{{savour.author}}</p>
+            <audio :data-key="savour.audio" :src="savour.audio"></audio>
           </div>
         </section>
-        <p>這是你的style</p>
+        <p>It's ok, dude</p>
         <section class="maybe_prefer">
           <div v-for="style in loadstyles"  @click="toplay(style)">
             <article :style="{background:'url('+style.cover+')'}"></article>
             <p class="li_info">{{ style.title }}</p>
+            <p>{{style.author}}</p>
+            <audio :data-key="style.audio" :src="style.audio"></audio>
           </div>
         </section>
-        <p>排行榜</p>
+        <p>try Billboard</p>
         <section class="billboard">
           <div v-for="billboard in loadbillboards"  @click="toplay(billboard)">
             <article :style="{background:'url('+billboard.cover+')'}"></article>
             <p class="li_info">{{ billboard.title }}</p>
+            <p>{{billboard.author}}</p>
+            <audio :data-key="billboard.audio" :src="billboard.audio"></audio>
           </div>
         </section>
+        <p>此專案僅供demo, 無其他用途</p>
       </div>
     </transition>
-
 <transition name="fade">
   <div v-if="this.searching==true">
     <section class="filtered">
       <div v-for="item in filtered"  @click="toplay(item),getback()">
         <article :style="{background: 'url('+item.cover+')'}"></article>
-        <p v-html="item.title"></p>
+        <p>{{item.title}}</p>
         <p>{{item.author}}</p>
+        <audio :data-key="item.audio" :src="item.audio"></audio>
       </div>
     </section>
   </div>
@@ -53,6 +62,7 @@
   </section>
 </template>
 <script>
+import {mapState,mapActions} from 'vuex'
 export default {
   data() {
     return {
@@ -65,22 +75,32 @@ export default {
     toshowbar() {
       return this.showbar = !this.showbar
     },
-    toplay(album){
+    toplay(album,event){
       let ftr = document.getElementById("album")
       let ftrcover = ftr.getElementsByTagName("img")[0]
+      let app = document.getElementById("app")
+      let audio = document.querySelector(`audio[data-key='${album.audio}']`)
+
       ftrcover.src = album.cover
       ftrcover.style.width = "60px"
-      ftrcover.style.height = "60px"    //playing album 調換
+      ftrcover.style.height = "60px"    //playing album img調換
 
-      let playing= document.getElementById("playicon") //play icon調換
-      playing.classList.remove('icon-play3')
-      playing.classList.add('icon-pause2')
+      app.style.backgroundImage = `url('${ftrcover.src}')` //大背景
+      this.$store.commit('PLAYTRACK', audio)
+
     },
     getback(){
       return this.filter=""
-    }
+    },
   },
   computed: {
+    ...mapState([
+      'playing_track',
+      'isPlaying' // playing_track  :  playing_track
+    ]),
+    ...mapActions([
+      'play_nowtrack'
+      ]),
     loadalbums() {
       const albums = this.$store.state.albums
       return albums
@@ -121,6 +141,7 @@ export default {
     }
   },
   mounted() {
+
   }
 }
 
@@ -157,6 +178,7 @@ export default {
     p
       font-size: 18px
       padding-top: 20px
+      position: relative
     + p
       font-size: 16px
 </style>

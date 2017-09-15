@@ -8,7 +8,6 @@
 </template>
 <script>
 import AppAside from './aside.vue'
-import AppFooter from './footer.vue'
 import AppMain from './main.vue'
 
 export default {
@@ -20,7 +19,6 @@ export default {
   components: {
     AppMain: AppMain,
     AppAside: AppAside,
-    AppFooter: AppFooter
   },
   mounted() {
 

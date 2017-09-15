@@ -63,11 +63,11 @@ export default {
 
 <style lang="sass">
 #fav
-  font-family: 'Microsoft JhengHei'
+  position: relative
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   text-align: center
-  background: url('../assets/band.jpg')
+  background: url('../assets/band.jpg') black
   background-position: center center
   background-size: cover
   background-repeat: no-repeat

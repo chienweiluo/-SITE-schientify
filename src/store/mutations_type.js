@@ -1,0 +1,8 @@
+// export const TYPE_NAME = 'TYPE_NAME';
+export const PLAYTRACK = 'PLAYTRACK';
+export const CONTROLPLAYING = 'CONTROLPLAYING';
+export const RESTARTPLAYING = 'RESTARTPLAYING';
+export const VOLUMECON = 'VOLUMECON';
+export const DOWNPLAYBAR = 'DOWNPLAYBAR';
+export const MOVEPLAYBAR = 'MOVEPLAYBAR';
+export const UPPLAYBAR = 'UPPLAYBAR';

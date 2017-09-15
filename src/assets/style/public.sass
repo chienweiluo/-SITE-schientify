@@ -1,5 +1,7 @@
+
 @import "../../../node_modules/compass-mixins/lib/compass/_css3.scss";
 @import "../../../node_modules/compass-mixins/lib/compass/_reset.scss";
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 
 $footerheight: 75px
 $iconwidth: 40px
@@ -10,12 +12,13 @@ $coverheight: 150px
 
 @font-face
   font-family: 'icomoon'
-  src:  url('fonts/icomoon.eot?ycgbei')
-  src:  url('fonts/icomoon.eot?ycgbei#iefix') format('embedded-opentype'),url('fonts/icomoon.ttf?ycgbei') format('truetype'),url('fonts/icomoon.woff?ycgbei') format('woff'),url('fonts/icomoon.svg?ycgbei#icomoon') format('svg')
+  src:  url('fonts/icomoon.eot?xxgmu4')
+  src:  url('fonts/icomoon.eot?xxgmu4#iefix') format('embedded-opentype'),url('fonts/icomoon.ttf?xxgmu4') format('truetype'),url('fonts/icomoon.woff?xxgmu4') format('woff'),url('fonts/icomoon.svg?xxgmu4#icomoon') format('svg')
   font-weight: normal
   font-style: normal
 
-[class^="icon-"], [class*=" icon-"], article
+
+[class^="icon-"], [class*=" icon-"],article
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important
   speak: none
@@ -24,10 +27,18 @@ $coverheight: 150px
   font-variant: normal
   text-transform: none
   line-height: 1
+
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+.icon-brand:before 
+  content: "\e900"
+  color: #1ed760
+
+.icon-spotify:before 
+  content: "\e900"
+  color: #1ed760
 
 .icon-music:before 
   content: "\e911"
@@ -86,34 +97,56 @@ $coverheight: 150px
 .icon-pause2:before 
   content: "\ea1d"
 
+.icon-stop2:before 
+  content: "\ea1e"
+
 .icon-backward2:before 
   content: "\ea1f"
 
-.icon-forward3:before 
+.icon-forward3:before
   content: "\ea20"
-
-.icon-volume-high:before 
+.icon-volume-high:before
   content: "\ea26"
-
-.icon-volume-medium:before 
+.icon-volume-medium:before
   content: "\ea27"
-
-.icon-volume-low:before 
+.icon-volume-low:before
   content: "\ea28"
-
-.icon-loop2:before 
+.icon-volume-mute2:before
+  content: "\ea2a"
+.icon-loop2:before
   content: "\ea2e"
-
 .icon-shuffle:before 
   content: "\ea30"
 
 
 
 
+@mixin scrollbars($size, $foreground-color, $round, $background-color: mix($foreground-color, white, 50%))
+  ::-webkit-scrollbar
+      width:  $size
+      height: $size
+      border-radius: $round
+
+  ::-webkit-scrollbar-thumb
+      background: $foreground-color
+      border-radius: $round
+  ::-webkit-scrollbar-track
+      background: $background-color
+      border-radius: $round
+
+  // For Internet Explorer
+  body
+    scrollbar-face-color: $foreground-color
+    scrollbar-track-color: $background-color
+    border-radius: $round
+
+@include scrollbars(.5em, slategray, 0.5em)
+
 
 body
   font-size: 24px
   color: #fff
+  font-family: 'Raleway', 'Microsoft Jhenghei',sans-serif
 #app
   .hello
     display: flex
@@ -183,6 +216,7 @@ body
       display: block
       padding: 20px 5px
       font-size: 0.6em
+      position: relative
 #searching
   padding: 20px 0
 .greet
@@ -192,9 +226,11 @@ body
   flex-flow: row nowrap
   justify-content: center
   width: calc(100% - 90px)
+  position: relative
 
 
 section + p
+  position: relative
   padding-left: $asidewid
   margin: 70px 0 25px 0px
 
@@ -223,6 +259,7 @@ section + p
       display: block
       padding: 20px 5px
       font-size: 0.6em
+      position: relative
 .maybe_prefer
   margin: 0 auto
   display: flex
@@ -249,6 +286,7 @@ section + p
       display: block
       padding: 20px 5px
       font-size: 0.6em
+      position: relative
 p
   .icon-play
     display: inline-block
@@ -287,6 +325,7 @@ p
       display: block
       padding: 20px 5px
       font-size: 0.6em
+      position: relative
 
 
 article
@@ -319,6 +358,7 @@ article
 
 .search-bar
   display: flex
+  position: relative
   flex-flow: row nowrap
   align-items: center
   justify-content: center
@@ -333,7 +373,6 @@ article
       color: white
       transition: color .3s
   input
-    font-family: "Microsoft JhengHei"
     letter-spacing: 3px
     text-align: center
     width: 250px
